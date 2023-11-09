@@ -17,7 +17,7 @@ function showForecast() {
   
   // Shows current weather for s specific city
   function getCurrentWeather(cityName) {
-      var requestURL = "https://api.openweathermap.org/data/2.5/forecast?" + cityName + "&appid=" + APIKey + "&units=imperial";
+    var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey + "&units=imperial";
       $.ajax({
           url: requestURL,
           method: 'GET',
@@ -42,8 +42,8 @@ function showForecast() {
 
   // Gets 5 day forecast 
   function getForecast(cityName) {
-      forecastEl.html("");
-      var requestURL = "https://pi.openweathermap.org/data/2.5/forecast?" + cityName + "&appid=" + APIKey + "&units=imperial";
+    forecastEl.html("");
+    var requestURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + APIKey + "&units=imperial";
       $.ajax({
           url: requestURL,
           method: 'GET',
@@ -95,7 +95,7 @@ function showForecast() {
 
   // shows search history
   function renderHistory() {
-      historyEl.text("");
+    historyEl.text("");
       for (i = 0; i < searchHistory.length; i++) {
           var historyBtn = $("<button>");
           historyBtn.text(searchHistory[i]);
